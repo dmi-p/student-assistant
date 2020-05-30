@@ -3,171 +3,69 @@
 <head>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Разработка программного обеспечения для помощи абитуриентам в выборе ВУЗа</title>
 </head>
 <body>
     <header class="header">
-        <h1>Разработка программного обеспечения для помощи абитуриентам в выборе ВУЗа</h1>
+        <h1>Программное обеспечение для помощи абитуриентам в выборе ВУЗа</h1>
     </header>
     <main>
-        <form action="" class="form">
+        <form action="https://echo.htmlacademy.ru/courses" method="POST" class="form">
             <div class="subjects">
-                <div class="subjects__item subjects__item--math">
-                    <select name="select">
-                        <option value="math" selected>Математика</option>
-                        <option value="ru_lang">Русский язык</option>
-                        <option value="physics">Физика</option>
-                        <option value="cs">Информатика</option>
-                        <option value="history">История</option>
-                        <option value="en_lang">Английский язык</option>
-                        <option value="chemistry">Химия</option>
-                        <option value="ss">Обществознание</option>
-                        <option value="biology">Биология</option>
-                        <option value="geography">География</option>
-                        <option value="literature">Литература</option>
-                    </select>
-                    <input type="text" id="" name="" placeholder="Баллы:" required>
-                </div>
-                <div class="subjects__item subjects__item--ru_lang">
-                    <select name="select">
-                        <option value="math">Математика</option>
-                        <option value="ru_lang" selected>Русский язык</option>
-                        <option value="physics">Физика</option>
-                        <option value="cs">Информатика</option>
-                        <option value="history">История</option>
-                        <option value="en_lang">Английский язык</option>
-                        <option value="chemistry">Химия</option>
-                        <option value="ss">Обществознание</option>
-                        <option value="biology">Биология</option>
-                        <option value="geography">География</option>
-                        <option value="literature">Литература</option>
-                    </select>
-                    <input type="text" id="" name="" placeholder="Баллы:" required>
+                <div class="subjects__item">
+                    <label for="subject_1">Математика:</label>
+                    <input type="text" pattern="(?:\b|-)([1-9]{1,2}[0]?|100)\b" required data-digits id="subject_1" name="math" class="points-input">
                 </div>
                 <div class="subjects__item">
-                    <select name="select">
-                        <option disabled selected value style="display:none">Выберите предмет</option>
-                        <option value="math">Математика</option>
-                        <option value="ru_lang">Русский язык</option>
-                        <option value="physics">Физика</option>
-                        <option value="cs">Информатика</option>
-                        <option value="history">История</option>
-                        <option value="en_lang">Английский язык</option>
-                        <option value="chemistry">Химия</option>
-                        <option value="ss">Обществознание</option>
-                        <option value="biology">Биология</option>
-                        <option value="geography">География</option>
-                        <option value="literature">Литература</option>
-                    </select>
-                    <input type="text" id="" name="" placeholder="Баллы:" required>
+                    <label for="subject_2">Русский язык:</label>
+                    <input type="text" pattern="(?:\b|-)([1-9]{1,2}[0]?|100)\b" required data-digits id="subject_2" name="ru_lang" class="points-input">
                 </div>
                 <div class="subjects__item">
-                    <select name="select">
-                        <option disabled selected value style="display:none">Выберите предмет</option>
-                        <option value="math">Математика</option>
-                        <option value="ru_lang">Русский язык</option>
-                        <option value="physics">Физика</option>
-                        <option value="cs">Информатика</option>
-                        <option value="history">История</option>
-                        <option value="en_lang">Английский язык</option>
-                        <option value="chemistry">Химия</option>
-                        <option value="ss">Обществознание</option>
-                        <option value="biology">Биология</option>
-                        <option value="geography">География</option>
-                        <option value="literature">Литература</option>
-                    </select>
-                    <input type="text" id="" name="" placeholder="Баллы:" required>
+                    <label for="subject_3">Биология:</label>
+                    <input type="text" pattern="(?:\b|-)([1-9]{1,2}[0]?|100)\b" data-digits id="subject_3" name="biology" class="points-input">
                 </div>
                 <div class="subjects__item">
-                    <select name="select">
-                        <option disabled selected value style="display:none">Выберите предмет</option>
-                        <option value="math">Математика</option>
-                        <option value="ru_lang">Русский язык</option>
-                        <option value="physics">Физика</option>
-                        <option value="cs">Информатика</option>
-                        <option value="history">История</option>
-                        <option value="en_lang">Английский язык</option>
-                        <option value="chemistry">Химия</option>
-                        <option value="ss">Обществознание</option>
-                        <option value="biology">Биология</option>
-                        <option value="geography">География</option>
-                        <option value="literature">Литература</option>
-                    </select>
-                    <input type="text" id="" name="" placeholder="Баллы:" required>
+                    <label for="subject_4">Иностранный язык:</label>
+                    <input type="text" pattern="(?:\b|-)([1-9]{1,2}[0]?|100)\b" data-digits id="subject_4" name="foreign_lang" class="points-input">
                 </div>
                 <div class="subjects__item">
-                    <select name="select">
-                        <option disabled selected value style="display:none">Выберите предмет</option>
-                        <option value="math">Математика</option>
-                        <option value="ru_lang">Русский язык</option>
-                        <option value="physics">Физика</option>
-                        <option value="cs">Информатика</option>
-                        <option value="history">История</option>
-                        <option value="en_lang">Английский язык</option>
-                        <option value="chemistry">Химия</option>
-                        <option value="ss">Обществознание</option>
-                        <option value="biology">Биология</option>
-                        <option value="geography">География</option>
-                        <option value="literature">Литература</option>
-                    </select>
-                    <input type="text" id="" name="" placeholder="Баллы:" required>
+                    <label for="subject_5">История:</label>
+                    <input type="text" pattern="(?:\b|-)([1-9]{1,2}[0]?|100)\b" data-digits id="subject_5" name="history" class="points-input">
                 </div>
                 <div class="subjects__item">
-                    <select name="select">
-                        <option disabled selected value style="display:none">Выберите предмет</option>
-                        <option value="math">Математика</option>
-                        <option value="ru_lang">Русский язык</option>
-                        <option value="physics">Физика</option>
-                        <option value="cs">Информатика</option>
-                        <option value="history">История</option>
-                        <option value="en_lang">Английский язык</option>
-                        <option value="chemistry">Химия</option>
-                        <option value="ss">Обществознание</option>
-                        <option value="biology">Биология</option>
-                        <option value="geography">География</option>
-                        <option value="literature">Литература</option>
-                    </select>
-                    <input type="text" id="" name="" placeholder="Баллы:" required>
+                    <label for="subject_6">Химия:</label>
+                    <input type="text" pattern="(?:\b|-)([1-9]{1,2}[0]?|100)\b" data-digits id="subject_6" name="chemistry" class="points-input">
                 </div>
                 <div class="subjects__item">
-                    <select name="select">
-                        <option disabled selected value style="display:none">Выберите предмет</option>
-                        <option value="math">Математика</option>
-                        <option value="ru_lang">Русский язык</option>
-                        <option value="physics">Физика</option>
-                        <option value="cs">Информатика</option>
-                        <option value="history">История</option>
-                        <option value="en_lang">Английский язык</option>
-                        <option value="chemistry">Химия</option>
-                        <option value="ss">Обществознание</option>
-                        <option value="biology">Биология</option>
-                        <option value="geography">География</option>
-                        <option value="literature">Литература</option>
-                    </select>
-                    <input type="text" id="" name="" placeholder="Баллы:" required>
+                    <label for="subject_7">География:</label>
+                    <input type="text" pattern="(?:\b|-)([1-9]{1,2}[0]?|100)\b" data-digits id="subject_7" name="geography" class="points-input">
                 </div>
                 <div class="subjects__item">
-                    <select name="select">
-                        <option disabled selected value style="display:none">Выберите предмет</option>
-                        <option value="math">Математика</option>
-                        <option value="ru_lang">Русский язык</option>
-                        <option value="physics">Физика</option>
-                        <option value="cs">Информатика</option>
-                        <option value="history">История</option>
-                        <option value="en_lang">Английский язык</option>
-                        <option value="chemistry">Химия</option>
-                        <option value="ss">Обществознание</option>
-                        <option value="biology">Биология</option>
-                        <option value="geography">География</option>
-                        <option value="literature">Литература</option>
-                    </select>
-                    <input type="text" id="" name="" placeholder="Баллы:" required>
+                    <label for="subject_8">Информатика:</label>
+                    <input type="text" pattern="(?:\b|-)([1-9]{1,2}[0]?|100)\b" data-digits id="subject_8" name="comp_science" class="points-input">
                 </div>
+                <div class="subjects__item">
+                    <label for="subject_9">Литература:</label>
+                    <input type="text" pattern="(?:\b|-)([1-9]{1,2}[0]?|100)\b" data-digits id="subject_9" name="literature" class="points-input">
+                </div>
+                <div class="subjects__item">
+                    <label for="subject_10">Обществознание:</label>
+                    <input type="text" pattern="(?:\b|-)([1-9]{1,2}[0]?|100)\b" data-digits id="subject_10" name="social_science" class="points-input">
+                </div>
+                <div class="subjects__item">
+                    <label for="subject_11">Физика:</label>
+                    <input type="text" pattern="(?:\b|-)([1-9]{1,2}[0]?|100)\b" data-digits id="subject_11" name="physics" class="points-input">
+                </div>
+                <!--  -->
             </div>
             <input class="subjects__submit" type="submit" value="Посмотреть шансы">
         </form>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>
