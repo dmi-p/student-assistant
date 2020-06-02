@@ -3,7 +3,7 @@
     let form = document.querySelector('.form');
     // let userSubjects = [];
     let temp = 0;
-    
+    let btnSubmit = document.querySelector('.subject__submit');
     
     let ru_langMinPoints = 24;
     let mathMinPoints = 27;
@@ -14,6 +14,12 @@
             this.value = this.value.replace(reg, '');
         }
     }));
+
+
+    let directionWindow = document.querySelector('.directionWindow');
+    let availableDirections = document.createElement('div');
+    availableDirections.className = "availableDirections";
+    availableDirections.innerHTML = "";
 
     form.onsubmit = function(evt) {
         evt.preventDefault();
@@ -56,6 +62,7 @@
             social_science: parseInt(social_sciencePoints.value, 10),
             physics: parseInt(physicsPoints.value, 10)
         };
+        
 
         // if (userPoints.math >= mathMinPoints && userPoints.ru_lang >= ru_langMinPoints) {
         //     if (userPoints.comp_science > 36) {
@@ -860,27 +867,166 @@
                             budgetPlaces: 10,
                             entranceExam: true,
                         },
-                        _030301: {
-                            subjects: ["math","ru_lang","physics"],
-                            points: 187,
-                            dorms: true,
-                            extramuralStudies: false,
-                            budgetPlaces: 15,
-                            entranceExam: true,
-                        },
                     },
             
-                    msmu: {
-                        
+                    hse: {
+                        _040301: {
+                            subjects: ["math","ru_lang","chemistry"],
+                            points: 282,
+                            dorms: true,
+                            extramuralStudies: false,
+                            budgetPlaces: 30,
+                            entranceExam: false,
+                        },
+                        _030302: {
+                            subjects: ["math","ru_lang","physics"],
+                            points: 275,
+                            dorms: true,
+                            extramuralStudies: false,
+                            budgetPlaces: 50,
+                            entranceExam: false,
+                        },
+                        _410303: {
+                            subjects: ["history","ru_lang","foreign_lang"],
+                            points: 291,
+                            dorms: true,
+                            extramuralStudies: false,
+                            budgetPlaces: 50,
+                            entranceExam: false,
+                        },
+                        _090304: {
+                            subjects: ["math","ru_lang","comp_science"],
+                            points: 300,
+                            dorms: true,
+                            extramuralStudies: false,
+                            budgetPlaces: 110,
+                            entranceExam: false,
+                        },
+                        _460301: {
+                            subjects: ["foreign_lang","ru_lang","history"],
+                            points: 277,
+                            dorms: true,
+                            extramuralStudies: false,
+                            budgetPlaces: 69,
+                            entranceExam: false,
+                        },
+                        _450301: {
+                            subjects: ["foreign_lang","ru_lang","literature"],
+                            points: 298,
+                            dorms: true,
+                            extramuralStudies: false,
+                            budgetPlaces: 50,
+                            entranceExam: false,
+                        },
+                        _370301: {
+                            subjects: ["math","ru_lang","biology"],
+                            points: 267,
+                            dorms: true,
+                            extramuralStudies: false,
+                            budgetPlaces: 63,
+                            entranceExam: false,
+                        },
+                        _030302: {
+                            subjects: ["math","ru_lang","physics"],
+                            points: 275,
+                            dorms: true,
+                            extramuralStudies: false,
+                            budgetPlaces: 50,
+                            entranceExam: false,
+                        },
+                        _010301: {
+                            subjects: ["math","ru_lang","physics"],
+                            points: 297,
+                            dorms: true,
+                            extramuralStudies: false,
+                            budgetPlaces: 60,
+                            entranceExam: false,
+                        },
+                        _380302: {
+                            subjects: ["math","ru_lang","foreign_lang"],
+                            points: 280,
+                            dorms: true,
+                            extramuralStudies: false,
+                            budgetPlaces: 60,
+                            entranceExam: false,
+                        },
+
                     },
             
                     mtuci: {
-            
+                        _020302: {
+                            subjects: ["math","ru_lang","comp_science"],
+                            points: 250,
+                            dorms: true,
+                            extramuralStudies: false,
+                            budgetPlaces: 24,
+                            entranceExam: false,
+                        },
+                        _090301: {
+                            subjects: ["math","ru_lang","comp_science"],
+                            points: 247,
+                            dorms: true,
+                            extramuralStudies: false,
+                            budgetPlaces: 100,
+                            entranceExam: false,
+                        },
+                        _090302: {
+                            subjects: ["math","ru_lang","comp_science"],
+                            points: 242,
+                            dorms: true,
+                            extramuralStudies: true,
+                            budgetPlaces: 75,
+                            entranceExam: false,
+                        },
+                        _090303: {
+                            subjects: ["math","ru_lang","comp_science"],
+                            points: 245,
+                            dorms: true,
+                            extramuralStudies: false,
+                            budgetPlaces: 25,
+                            entranceExam: false,
+                        },
+                        _100301: {
+                            subjects: ["math","ru_lang","comp_science"],
+                            points: 244,
+                            dorms: true,
+                            extramuralStudies: false,
+                            budgetPlaces: 51,
+                            entranceExam: false,
+                        },
+                        _110301: {
+                            subjects: ["math","ru_lang","physics"],
+                            points: 197,
+                            dorms: true,
+                            extramuralStudies: false,
+                            budgetPlaces: 50,
+                            entranceExam: false,
+                        },
+                        _110302: {
+                            subjects: ["math","ru_lang","comp_science"],
+                            points: 199,
+                            dorms: true,
+                            extramuralStudies: true,
+                            budgetPlaces: 106,
+                            entranceExam: false,
+                        },
+                        _270304: {
+                            subjects: ["math","ru_lang","comp_science"],
+                            points: 234,
+                            dorms: true,
+                            extramuralStudies: true,
+                            budgetPlaces: 22,
+                            entranceExam: false,
+                        },
+                        _090301: {
+                            subjects: ["math","ru_lang","comp_science"],
+                            points: 247,
+                            dorms: true,
+                            extramuralStudies: false,
+                            budgetPlaces: 100,
+                            entranceExam: false,
+                        },
                     },
-                },
-            
-                NVS: {
-            
                 },
             };
             
@@ -889,16 +1035,17 @@
                 spbu: "Санкт-Петербургский государственный университет",
                 pgups: "Петербургский государственный университет путей сообщения",
                 mgu: "Московский государственный университет",
-
+                hse: "НИУ Высшая школа экономики",
+                mtuci: "Московский технический университет связи и информатики",
             };
 
             let cities = {
                 SPb: "Санкт-Петербург",
                 MSC: "Москва",
-                NVS: "Новосибирск",
             }
 
             let allDirections = {
+                _010301: "Математика",
                 _010302: "Прикладная математика и информатика",
                 _010303: "Механика и математическое моделирование",
                 _020301: "Математика и компьютерные науки",
@@ -983,6 +1130,7 @@
                                 }
                                 if (base[city][university][direction].points <= currentPoints) {
                                     // console.log('Баллы подошли');
+                                    // console.log('надо:'+base[city][university][direction].points);
                                     for (let directionName in allDirections) {
                                         if (direction == directionName) {
                                             fullDirection = allDirections[directionName];
@@ -1000,7 +1148,7 @@
                                             fullCity = cities[cityName];
                                         }
                                     }
-
+                                    availableDirections.innerHTML += "<div class=\"directionItem\"><h3 class\"directionName\">" + fullDirection + "</h3><p class\"univName\">" + fullUniversity + "</p>  <p class=\"cityName\">" + fullCity + "</p></div>";
                                     console.log("Доступна специальность: " + fullDirection + " в " + fullUniversity + " в городе " + fullCity);
                                     if (base[city][university][direction].dorms) {
                                         console.log("Доступно общежитие");
@@ -1025,8 +1173,7 @@
             renderDirections();
     }
 // _____ konec onsubmit
-
-
+directionWindow.append(availableDirections);
 
 
 
