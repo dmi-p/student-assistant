@@ -62,9 +62,75 @@
                 </div>
                 <!--  -->
             </div>
-            <input class="subjects__submit" type="submit" value="Посмотреть шансы">
+            <input class="subjects__submit" type="submit" value="Проверить">
         </form>
-        <div class="directionWindow"></div>
+        <div class="directionWindow visually-hidden" id="main">        
+            <div class="directionSortWindow">
+                <div class="citySort sort">
+                    <h3 class="sortHeader">Доступные города: </h3>
+                    <label class="sortLabel">
+                        <input type="checkbox" name="city" value="MSC" checked>Москва
+                    </label>
+                    <label class="sortLabel">
+                        <input type="checkbox" name="city" value="SPb" checked>Санкт-Петербург
+                    </label>
+                </div>
+                <div class="sortMark"></div>
+                <div class="univSort sort">
+                    <h3 class="sortHeader">Доступные университеты: </h3>
+                    <label class="sortLabel">
+                        <input type="checkbox" name="university" value="sut" checked>CПбГУТ
+                    </label>
+                    <label class="sortLabel">
+                        <input type="checkbox" name="university" value="spbu" checked>СПбГУ
+                    </label>
+                    <label class="sortLabel">
+                        <input type="checkbox" name="university" value="pgups" checked>ПГУПС
+                    </label>
+                    <label class="sortLabel">
+                        <input type="checkbox" name="university" value="mgu" checked>МГУ
+                    </label>
+                    <label class="sortLabel">
+                        <input type="checkbox" name="university" value="hse" checked>НИУ ВШЭ
+                    </label>
+                    <label class="sortLabel">
+                        <input type="checkbox" name="university" value="mtuci" checked>МТУСИ
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="directionSortWindow">
+            <div class="citySort">
+                <h3 class="sortHeader">Доступные города: </h3>
+                <label class="sortLabel">
+                    <input type="checkbox" name="city" value="moscow">Москва
+                </label>
+                <label class="sortLabel">
+                    <input type="checkbox" name="city" value="saint-petersburg">Санкт-Петербург
+                </label>
+            </div>
+            <div class="univSort">
+                <h3 class="sortHeader">Доступные университеты: </h3>
+                <label class="sortLabel">
+                    <input type="checkbox" name="university" value="sut">CПбГУТ
+                </label>
+                <label class="sortLabel">
+                    <input type="checkbox" name="university" value="spbu">СПбГУ
+                </label>
+                <label class="sortLabel">
+                    <input type="checkbox" name="university" value="pgups">ПГУПС
+                </label>
+                <label class="sortLabel">
+                    <input type="checkbox" name="university" value="mgu">МГУ
+                </label>
+                <label class="sortLabel">
+                    <input type="checkbox" name="university" value="hse">НИУ ВШЭ
+                </label>
+                <label class="sortLabel">
+                    <input type="checkbox" name="university" value="mtuci">МТУСИ
+                </label>
+            </div> -->
+        </div>
     </main>
     <script src="script.js"></script>
 </body>
