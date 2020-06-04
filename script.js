@@ -1,12 +1,6 @@
 (function () {
     let inputs = document.querySelectorAll('.points-input');
     let form = document.querySelector('.form');
-    // let userSubjects = [];
-    let temp = 0;
-    let btnSubmit = document.querySelector('.subject__submit');
-    
-    let ru_langMinPoints = 24;
-    let mathMinPoints = 27;
 
     inputs.forEach(input => input.addEventListener('keyup', function () {
         var reg = new RegExp('\\D', 'g');
@@ -20,7 +14,6 @@
 
     let isCheckedCity = function(city) {
         for (item of sortCityItems) {
-            // alert(item.value+'-item');
             if ((item.value == city) & (item.checked)) {
                 return true;
             }
@@ -35,11 +28,6 @@
         }
     }
 
-
-
-
-
-
     let directionWindow = document.querySelector('.directionWindow');
     let availableDirections = document.createElement('div');
     availableDirections.className = "availableDirections";
@@ -49,26 +37,8 @@
         evt.preventDefault();
         availableDirections.innerHTML = "";
 
-
-        // console.log(sortCityItems);
-        // for (city of sortCityItems) {
-        //     console.log(city.value);
-        // }
         directionWindow.classList.remove("visually-hidden");
-        // for (let i = 0; i < inputs.length; i++) {
-        //     if (inputs[i].value) {
-        //         temp++;
-        //     }
-        // }
-        
-        // let userSubjects = [temp];
-        // temp = 0;
-        // for (let i = 0; i < inputs.length; i++) {
-        //     if (inputs[i].value) {
-        //         userSubjects[temp] = inputs[i].value;
-        //         temp++;
-        //     }
-        // }
+
         let mathPoints = document.querySelector('#subject_1');
         let ru_langPoints = document.querySelector('#subject_2');
         let biologyPoints = document.querySelector('#subject_3');
@@ -94,77 +64,7 @@
             social_science: parseInt(social_sciencePoints.value, 10),
             physics: parseInt(physicsPoints.value, 10)
         };
-        
 
-        // if (userPoints.math >= mathMinPoints && userPoints.ru_lang >= ru_langMinPoints) {
-        //     if (userPoints.comp_science > 36) {
-        //         let comp_sciencePoints = userPoints.math + userPoints.ru_lang + userPoints.comp_science;
-        //         alert(comp_sciencePoints);
-        //         for (let university in SPbUnivs) {
-        //             alert(university);
-        //             for (let programs in university) {
-        //                 alert(programs);
-        //                 for (let program in programs) {
-        //                     if (comp_sciencePoints >= programs[program]) {
-        //                         alert('Вы можете поступить на направление:'+ programs[program].value);
-        //                     }
-        //                 }
-        //             }
-        //         }
-        //     }
-        // };
-        
-        //______nachalo rabotaushego koda
-        // if (userPoints.math >= mathMinPoints && userPoints.ru_lang >= ru_langMinPoints) {
-        //     if (userPoints.comp_science > 36) {
-        //         let comp_sciencePoints = userPoints.math + userPoints.ru_lang + userPoints.comp_science;
-        //         for (let university in SPbUnivs) {
-        //             // console.log(SPbUnivs[university]);
-        //             // console.log('______________');
-        //             // console.log(SPbUnivs[university].cs);
-        //             for (let subject in SPbUnivs[university].cs) {
-        //                 // console.log(SPbUnivs[university].cs[subject]);
-        //                 if (parseInt(SPbUnivs[university].cs[subject], 10) <= comp_sciencePoints) {
-        //                     console.log('Вы можете поступить на направление '+subject+' в университете '+university);
-        //                 }
-        //             }
-        //         };
-        //     }
-
-        //     if (userPoints.physics > 36) {
-        //         let physicsPoints = userPoints.math + userPoints.ru_lang + userPoints.physics;
-        //         for (university in SPbUnivs) {
-        //             for (subject in SPbUnivs[university].physics) {
-        //                 if (parseInt(SPbUnivs[university].physics[subject], 10) <= physicsPoints) {
-        //                     console.log('Вы можете поступить на направление '+subject);
-        //                 }
-        //             }
-        //         };
-        //     }
-
-        //     if (userPoints.chemistry > 36) {
-        //         let chemistryPoints = userPoints.math + userPoints.ru_lang + userPoints.chemistry;
-        //         for (university in SPbUnivs) {
-        //             for (subject in SPbUnivs[university].chemistry) {
-        //                 if (parseInt(SPbUnivs[university].chemistry[subject], 10) <= chemistryPoints) {
-        //                     console.log('Вы можете поступить на направление '+subject);
-        //                 }
-        //             }
-        //         };
-        //     }
-
-        //     if (userPoints.geography > 36) {
-        //         let geographyPoints = userPoints.math + userPoints.ru_lang + userPoints.geography;
-        //         for (university in SPbUnivs) {
-        //             for (subject in SPbUnivs[university].geography) {
-        //                 if (parseInt(SPbUnivs[university].geography[subject], 10) <= geographyPoints) {
-        //                     console.log('Вы можете поступить на направление '+subject);
-        //                 }
-        //             }
-        //         };
-        //     }
-        // };
-            //_________ konec 
             let base = {
                 SPb: {
                     sut: {
@@ -1144,16 +1044,6 @@
             
             function renderDirections() {
                 availableDirections.innerHTML = "";
-                // for (city of sortCityItems) {
-                //     city.onchange = function() {
-                //         // alert(this.checked + this.value);
-                //         if (this.checked) {
-                //             renderDirections(this.value);
-                //             // alert(this.value);
-                //         }
-                //     }
-                // }
-                // alert(cityVal);
                 let currentPoints = 0;
                 let fullDirection = "";
                 let fullUniversity = "";
@@ -1166,26 +1056,20 @@
                 let extramuralText = "";
                 let entranceExamText = "";
                 for (let city in base) {
-                    // alert(city);
                    if (isCheckedCity(city)) {
 
                     for (let university in base[city]) {
                         if (isCheckedUniv(university)) {
                         for (let direction in base[city][university]) {
-                            // console.log(direction);
                             subjectNumbers = 0;
                             for (let i = 0; i < base[city][university][direction].subjects.length; i++) {
                                 for (let subject in userPoints) {
                                     if (subject == base[city][university][direction].subjects[i]) {
                                       currentPoints = currentPoints +  userPoints[subject];
                                       subjectNumbers += 1;
-                                    //   console.log('current:'+currentPoints);
-                                    //   console.log('po predmetu:'+userPoints[subject]);
                                     }
                                 }
                                 if ((base[city][university][direction].points <= currentPoints) & (subjectNumbers > 2)) {
-                                    // console.log('Баллы подошли');
-                                    // console.log('надо:'+base[city][university][direction].points);
                                     for (let directionName in allDirections) {
                                         if (direction == directionName) {
                                             fullDirection = allDirections[directionName];
@@ -1203,17 +1087,7 @@
                                             fullCity = cities[cityName];
                                         }
                                     }
-                                    // availableDirections.innerHTML += "<div class=\"directionItem\"><h3 class\"directionName\">"
-                                    //  + fullDirection + "</h3><p class\"univName\">" + fullUniversity
-                                    //  + "</p><p class=\"cityName\">" + fullCity + "</p>" + "<div class=\"pointsNeeded\">"
-                                    //  + base[city][university][direction].points + "<span class=\"tooltip\">Минимальный проходной балл в прошлом году</span></div>"
-                                    //  + "<div class=\"pointsCurrent\"></div>";
-                                    
-                                    //  availableDirections.innerHTML += + "</div>";
-
-                                    // console.log("Доступна специальность: " + fullDirection + " в " + fullUniversity + " в городе " + fullCity);
                                     if (base[city][university][direction].dorms) {
-                                        console.log("Доступно общежитие");
                                         dorm = `
                                         <div class="dormContainer">
                                             <svg class="svg-home" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -1238,12 +1112,10 @@
                                     if (base[city][university][direction].extramuralStudies) {
                                         extramuralAbility = extramuralAble;
                                         extramuralText = `Доступна заочная форма обучения`;
-                                        console.log("Доступна заочная форма обучения");
                                     }
                                     else if (!(base[city][university][direction].extramuralStudies)) {
                                         extramuralAbility = extramuralDisable;
                                         extramuralText = `Заочная форма обучения недоступна`;
-                                        console.log("Заочная форма обучения недоступна");
                                     }
                                     let extramural = `                                        
                                     <div class="extramuralContainer">
@@ -1351,7 +1223,6 @@
             }
             {
                 if (availableDirections.innerHTML == "") {
-                    // alert('По вашему запросу ничего не нашлось :(');
                     availableDirections.innerHTML = `
                     <div class="noResults">
                         <p>
@@ -1361,26 +1232,6 @@
                     `
                 }
             }
-            // const blockID = anchor.getAttribute('href').substr(1);
-                
-            // document.getElementById(blockID).scrollIntoView({
-            // behavior: 'smooth',
-            // block: 'start'
-            // });
-            // const anchors = document.querySelectorAll('a[href*="#"]');
-            // for (let anchor of anchors) {
-            //     anchor.addEventListener('click', function (e) {
-            //         e.preventDefault()
-                
-            //         const blockID = anchor.getAttribute('href').substr(1)
-                
-            //         document.getElementById(main).scrollIntoView({
-            //         behavior: 'smooth',
-            //         block: 'start'
-            //         })
-            //     })
-            // }
-
 
             document.getElementById('main').scrollIntoView({
                 behavior: 'smooth',
@@ -1401,36 +1252,4 @@
             });
         }
     }
-// _____ konec onsubmit
-
-
-
-
-
-
-
 })();
-
-
-
-// function checkPoints(subject, points) {
-//     if (subject == "cs") {
-//         if (userPoints.math >= mathMinPoints && userPoints.ru_lang >= ru_langMinPoints) {
-//             if (points > 36) {
-//                 let comp_sciencePoints = userPoints.math + userPoints.ru_lang + points;
-//                 for (let university in SPbUnivs) {
-//                     // console.log(SPbUnivs[university]);
-//                     // console.log('______________');
-//                     // console.log(SPbUnivs[university].cs);
-//                     for (let subject in SPbUnivs[university].cs) {
-//                         // console.log(SPbUnivs[university].cs[subject]);
-//                         if (parseInt(SPbUnivs[university].cs[subject], 10) <= comp_sciencePoints) {
-//                             console.log('Вы можете поступить на направление '+subject);
-//                         }
-//                     }
-//                 };
-//             }
-//         }
-//     }
-// }
-
