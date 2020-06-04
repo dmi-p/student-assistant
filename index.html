@@ -2,9 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,18 +10,18 @@
 </head>
 <body>
     <header class="header">
-        <h1>Программное обеспечение для помощи абитуриентам в выборе ВУЗа</h1>
+        <h1>Проверьте доступные Вам направления</h1>
     </header>
     <main>
         <form action="https://echo.htmlacademy.ru/courses" method="POST" class="form">
             <div class="subjects">
                 <div class="subjects__item">
                     <label for="subject_1">Математика:</label>
-                    <input type="text" pattern="(?:\b|-)([1-9]{1,2}[0]?|100)\b" required data-digits id="subject_1" name="math" class="points-input">
+                    <input type="text" pattern="(?:\b|-)([1-9]{1,2}[0]?|100)\b" data-digits id="subject_1" name="math" class="points-input">
                 </div>
                 <div class="subjects__item">
                     <label for="subject_2">Русский язык:</label>
-                    <input type="text" pattern="(?:\b|-)([1-9]{1,2}[0]?|100)\b" required data-digits id="subject_2" name="ru_lang" class="points-input">
+                    <input type="text" pattern="(?:\b|-)([1-9]{1,2}[0]?|100)\b" data-digits id="subject_2" name="ru_lang" class="points-input">
                 </div>
                 <div class="subjects__item">
                     <label for="subject_3">Биология:</label>
@@ -61,10 +59,45 @@
                     <label for="subject_11">Физика:</label>
                     <input type="text" pattern="(?:\b|-)([1-9]{1,2}[0]?|100)\b" data-digits id="subject_11" name="physics" class="points-input">
                 </div>
-                <!--  -->
             </div>
-            <input class="subjects__submit" type="submit" value="Посмотреть шансы">
+            <input class="subjects__submit" type="submit" value="Проверить">
         </form>
+        <div class="directionWindow visually-hidden" id="main">        
+            <div class="directionSortWindow">
+                <div class="citySort sort">
+                    <h3 class="sortHeader">Доступные города: </h3>
+                    <label class="sortLabel">
+                        <input type="checkbox" name="city" value="MSC" checked>Москва
+                    </label>
+                    <label class="sortLabel">
+                        <input type="checkbox" name="city" value="SPb" checked>Санкт-Петербург
+                    </label>
+                </div>
+                <div class="sortMark"></div>
+                <div class="univSort sort">
+                    <h3 class="sortHeader">Доступные университеты: </h3>
+                    <label class="sortLabel">
+                        <input type="checkbox" name="university" value="sut" checked>CПбГУТ
+                    </label>
+                    <label class="sortLabel">
+                        <input type="checkbox" name="university" value="spbu" checked>СПбГУ
+                    </label>
+                    <label class="sortLabel">
+                        <input type="checkbox" name="university" value="pgups" checked>ПГУПС
+                    </label>
+                    <label class="sortLabel">
+                        <input type="checkbox" name="university" value="mgu" checked>МГУ
+                    </label>
+                    <label class="sortLabel">
+                        <input type="checkbox" name="university" value="hse" checked>НИУ ВШЭ
+                    </label>
+                    <label class="sortLabel">
+                        <input type="checkbox" name="university" value="mtuci" checked>МТУСИ
+                    </label>
+                </div>
+            </div>
+        </div>
+        </div>
     </main>
     <script src="script.js"></script>
 </body>
