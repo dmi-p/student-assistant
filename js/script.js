@@ -1,4 +1,4 @@
-(function (base, universities, cities, allDirections) {
+(function (base, universities, cities, allDirections, comparePoints) {
     let inputs = document.querySelectorAll('.points-input');
     let form = document.querySelector('.form');
 
@@ -78,7 +78,8 @@
                 let extramuralDisable = `fill="red"`;
                 let extramuralText = "";
                 let entranceExamText = "";
-                console.log(base);
+                // console.log(base);
+                comparePoints();
                 for (let city in base) {
                    if (isCheckedCity(city)) {
 
@@ -279,4 +280,5 @@
 })(window.base.base,
    window.base.universities,
    window.base.cities,
-   window.base.allDirections);
+   window.base.allDirections,
+   window.base.comparePoints);

@@ -1,4 +1,6 @@
-(function () {
+// import { allLimit } from "async";
+// import {newBase} from './data/parsedData.js';
+(function (newBase) {
     let base = {
             SPb: {
                 sut: {
@@ -498,7 +500,7 @@
                     },
                     _120301: {
                         subjects: ["math","ru_lang","physics"],
-                        points: 190,
+                        points: 189,
                         dorms: true,
                         extramuralStudies: false,
                         budgetPlaces: 14,
@@ -974,6 +976,26 @@
             _510304: "Музеология и охрана объектов культурного и природного наследия",
             
         };
+
+        let comparePoints = function() {
+            for (let newDirection in newBase) {
+                for (let baseDirection in allDirections) {
+                    if (newBase[newDirection].direction == allDirections[baseDirection]) {
+                        let currentDirection = baseDirection;
+                        let currentPoints = newBase[newDirection].points;
+                        for (direction in base.SPb.pgups) {
+                            if (direction == currentDirection) {
+                                console.log(`
+                                overwritten: 
+                                было: ${base.SPb.pgups[direction].points},
+                                стало: ${currentPoints}`);
+                                base.SPb.pgups[direction].points = currentPoints;
+                            }
+                        }
+                    }
+                }
+            }
+        };
         
     
     window.base = {
@@ -981,5 +1003,6 @@
         universities: universities,
         cities: cities,
         allDirections: allDirections,
+        comparePoints: comparePoints
     };
-})();
+})(window.newBase.newBase);
